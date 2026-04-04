@@ -1,0 +1,129 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    color: #1e2a2e;
+    scroll-behavior: smooth;
+}
+
+
+header {
+    background: #ffffff;
+    padding: 20px 20px 20px 40px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #f8cc82;
+}
+
+main {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 2rem 2rem 2rem;
+}
+
+
+section {
+    padding: 20px 20px 20px 20px;
+    margin-bottom: 30px;
+}
+
+
+footer {
+    background-color: #000000;     
+    color: #ffffff;                 
+    padding: 2.5rem 2rem;
+    margin-top: 1rem;
+    text-align: center;
+    border-top-left-radius: 32px;
+    border-top-right-radius: 32px;
+}
+
+h1.mainheader {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #bc6c25;
+    margin-bottom: 35px;
+    display: inline-block;
+}
+
+nav a {
+    text-decoration: none;
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: #3a5e3f;
+    margin-right: 30px;
+    padding-bottom: 3px;
+    border-bottom: 2px solid transparent;
+}
+
+nav a.active{
+    color:#1b4120;
+    font-weight: 650;
+}
+
+nav a:hover {
+    color: #f17253;
+    border-bottom-color: #f17253;
+}
+
+footer a {
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14;
+    color: #f4d3a1;
+}
+
+
+
+.footer-contacts p {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: 1rem;
+}
+
+.footer-contacts a {
+    color: #f9d79f;
+    font-weight: 500;
+}
+
+.footer-contacts a:hover {
+    color: #ffbc6e;
+    text-decoration: underline;
+}
+
+.copyright {
+    margin-top: 1.8rem;
+    font-size: 0.85rem;
+    opacity: 0.75;
+}
+
+@media (max-width: 800px) {
+    main {
+        padding: 0px 10px 15px 10px;
+    }
+    h1 {
+        font-size: 1.9rem;
+        text-align: center;
+    }
+    h2 {
+        font-size: 1.6rem;
+    }
+    .about-wrapper {
+        flex-direction: column;
+    }
+    nav a {
+        margin-right: 1.2rem;
+    }
+    th, td {
+        padding: 10px 8px;
+        font-size: 0.85rem;
+    }
+    section {
+        padding: 1.4rem;
+    }
+}
+

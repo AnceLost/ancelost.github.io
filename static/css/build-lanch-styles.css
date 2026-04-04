@@ -1,0 +1,95 @@
+.menu-section {
+    margin-bottom: 50px;
+}
+.menu-section h2 {
+    font-size: 1.9rem;
+    font-weight: 600;
+    color: #2d3e2b;
+    margin-bottom: 20px;
+}
+/*строка, то есть на каждую категорию*/
+.dishes-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+/*одна карточка*/
+.dish-card {
+    background-color: #ffffff;
+    padding: 30px 40px;
+    border-radius: 35px;
+    display: flex;
+    flex-direction: column; /*элементы друг под другом*/
+    height: 100%;
+}
+.dish-card:hover {
+    border: 2px solid #f99c8c;
+}
+/* при наведении на карточку меняем фон кнопки */
+.dish-card:hover button {
+    background-color: #ff6347;
+    color: white;
+}
+.dish-card img {
+    width: 100%;
+    border-radius: 35px;
+    aspect-ratio: 1 / 0.9;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+.dish-price {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #bc6c25;
+    margin: 10px 0 5px;
+}
+.dish-title {
+    font-size: 1.35rem;
+    font-weight: 600;
+    color: #2d3e2b;
+    margin-bottom: 8px;
+}
+.dish-weight {
+    font-size: 0.9rem;
+    color: #6c757d;
+    margin-bottom: 16px;
+}
+button {
+    background-color: #f1eee9;
+    border: none;
+    padding: 10px 30px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 1rem;
+    margin-top: auto;   /* прижимаем кнопку вниз независимо от высоты названия */
+    align-self: flex-start;
+}
+
+@media (max-width: 800px) {
+    .dishes-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    nav {
+        justify-content: space-between; /* равное расстояние между элементами, без отступов по краям */
+    }
+}
+
+@media (max-width: 600px) {
+    h1 {
+        text-align: center;
+    }
+    nav {
+        flex-direction: column;
+        align-items: center; /* выравнивание по центру поперечной оси */
+    }
+    nav a {
+        font-size: calc(1.05rem + 4px);
+    }
+    .menu-section h2 {
+        text-align: center;
+    }
+    .dishes-grid {
+        grid-template-columns: 1fr;
+    }
+}

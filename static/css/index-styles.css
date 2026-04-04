@@ -1,0 +1,147 @@
+.about-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.about-text {
+    flex: 1.2;
+}
+
+.about-text p {
+    font-size: 1.05rem;
+    line-height: 1.55;
+    color: #2c3e2f;
+    margin-bottom: 0.5rem;
+}
+
+.about-image {
+    flex: 1;
+    text-align: center;
+}
+
+.about-image img {
+    width: 100%;
+    height: auto;
+    max-width: 520px;
+    border-radius: 28px;
+    object-fit: cover;
+}
+
+ul {
+    list-style-type: none;
+    margin-top: 0.5rem;
+}
+
+li {
+    margin-bottom: 1rem;
+    font-size: 1.05rem;
+    padding-left: 1.8rem;
+    position: relative;
+    color: #2c3e2f;
+}
+
+li::before {
+    content: "-->";
+    color: #f4a261;
+    font-weight: 700;
+    position: absolute;
+    left: 0;
+    font-size: 1.2rem;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;      
+    margin-top: 10px;
+    font-size: 0.95rem;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+th, td {
+    border: 1px solid #eed8ac;     
+    padding: 14px 12px;            
+    text-align: left;               
+    vertical-align: middle;
+}
+
+th {
+    background-color: #fdf8ed;
+    font-weight: 700;
+    font-size: 1rem;
+    color: #5e3a1c;
+}
+
+td {
+    background-color: #ffffff;
+    color: #2d3e2b;
+}
+
+td.last, th.last {
+    text-align: center;
+    font-weight: 500;
+}
+@media (max-width: 800px) {
+    nav {
+        justify-content: space-between; /* равные расстояния между элементами, без отступов по краям */
+    }
+    .about-image img {
+        width: 500px;
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    h1 {
+        text-align: center;
+    }
+    nav {
+        flex-direction: column;
+        align-items: center; /* выравнивание по центру поперечной оси */
+    }
+    nav a {
+        font-size: calc(1.05rem + 4px);
+    }
+    .about-image img {
+        width: 100%;
+    }
+}
+
+/* эти стили делают таблицу в виде карточек, что удобнее на мобилках*/
+@media (max-width: 580px) {
+    table, thead, tbody, th, td, tr {
+        display: block;
+    }
+    
+    thead {
+        display: none;
+    }
+
+    tr {
+        margin-bottom: 10px;
+        border: 1px solid #e9d6b0;
+        border-radius: 20px;
+        padding: 5px;
+        background: white;
+    }
+    td {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border: none;
+        border-bottom: 1px solid #f0e4cf;
+        padding: 10px 8px;
+        text-align: right;
+    }
+    td.last {
+        border-bottom: none;
+    }
+    td::before {
+        content: attr(data-label);
+        font-weight: 700;
+        text-align: left;
+        color: #bc6c25;
+        flex: 1;
+    }
+}
