@@ -1,0 +1,257 @@
+.menu-section {
+    margin-bottom: 50px;
+}
+.menu-section h2 {
+    font-size: 1.9rem;
+    font-weight: 600;
+    color: #2d3e2b;
+    margin-bottom: 20px;
+}
+/*строка, то есть на каждую категорию*/
+.dishes-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+/*одна карточка*/
+.dish-card {
+    background-color: #ffffff;
+    padding: 30px 40px;
+    border-radius: 35px;
+    display: flex;
+    flex-direction: column; /*элементы друг под другом*/
+    height: 100%;
+}
+.dish-card:hover {
+    border: 2px solid #f99c8c;
+}
+/* при наведении на карточку меняем фон кнопки */
+.dish-card:hover button {
+    background-color: #ff6347;
+    color: white;
+}
+.dish-card img {
+    width: 100%;
+    border-radius: 35px;
+    aspect-ratio: 1 / 0.9;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+.dish-price {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #bc6c25;
+    margin: 10px 0 5px;
+}
+.dish-title {
+    font-size: 1.35rem;
+    font-weight: 600;
+    color: #2d3e2b;
+    margin-bottom: 8px;
+}
+.dish-weight {
+    font-size: 0.9rem;
+    color: #6c757d;
+    margin-bottom: 16px;
+}
+button {
+    background-color: #f1eee9;
+    border: none;
+    padding: 10px 30px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 1rem;
+    margin-top: auto;   /* прижимаем кнопку вниз независимо от высоты названия */
+    align-self: flex-start;
+}
+
+.order-form-container {
+    background: #ffffff;
+    border-radius: 35px;
+    padding: 2rem;
+    margin-top: 2rem;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+}
+
+.order-form-container h2 {
+    font-size: 1.9rem;
+    font-weight: 600;
+    color: #2d3e2b;
+    margin-bottom: 1.8rem;
+    padding-left: 1rem;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.form-col {
+    background: #fefaf5;
+    padding: 1.5rem;
+    border-radius: 28px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+}
+
+.form-col h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #bc6c25;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #ff6347;
+    display: inline-block;
+}
+
+.form-group {
+    margin-bottom: 1.2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-weight: 500;
+    margin-bottom: 0.4rem;
+    color: #2d3e2b;
+    font-size: 0.95rem;
+}
+
+.form-group select,
+.form-group input,
+.form-group textarea {
+    padding: 10px 12px;
+    border: 1px solid #e0d6c0;
+    border-radius: 12px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.95rem;
+    background-color: white;
+    transition: 0.2s;
+}
+
+.form-group select:focus,
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #ff6347;
+    box-shadow: 0 0 0 2px rgba(255, 99, 71, 0.2);
+}
+
+textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+/* чекбокс и радио */
+.checkbox-group, .radio-group {
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+.checkbox-group label, .radio-group label {
+    margin-bottom: 0;
+    cursor: pointer;
+}
+.checkbox-group input, .radio-group input {
+    width: auto;
+    margin-right: 6px;
+    cursor: pointer;
+}
+.radio-option {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 5px;
+}
+.radio-option label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: normal;
+    cursor: pointer;
+}
+
+.time-field {
+    margin-top: 10px;
+}
+
+.buttons-row {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+    margin-top: 1.5rem;
+}
+
+.btn {
+    padding: 12px 28px;
+    border: none;
+    border-radius: 40px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    font-family: 'Roboto', sans-serif;
+}
+
+.btn-reset {
+    background-color: #e9e0d0;
+    color: #5e3a1c;
+}
+.btn-reset:hover {
+    background-color: #d6cbbc;
+}
+
+.btn-submit {
+    background-color: #ff6347;
+    color: white;
+}
+.btn-submit:hover {
+    background-color: #e5533a;
+}
+
+@media (max-width: 800px) {
+    .dishes-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    nav {
+        justify-content: space-between; /* равное расстояние между элементами, без отступов по краям */
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 600px) {
+    h1 {
+        text-align: center;
+    }
+    nav {
+        flex-direction: column;
+        align-items: center; /* выравнивание по центру поперечной оси */
+    }
+    nav a {
+        font-size: calc(1.05rem + 4px);
+    }
+    .menu-section h2 {
+        text-align: center;
+    }
+    .dishes-grid {
+        grid-template-columns: 1fr;
+    }
+    .order-form-container h2 {
+        text-align: center;
+    }
+    .form-col h3 {
+        display: block;
+        text-align: center;
+    }
+    .buttons-row {
+        flex-direction: column;
+    }
+    .btn {
+        text-align: center;
+    }
+}

@@ -111,6 +111,93 @@
             </div>
         </div>
     </section>
+
+     <div class="order-form-container">
+        <h2>Оформить заказ</h2>
+        <form id="orderForm" action="https://httpbin.org/post" method="POST">
+            <div class="form-grid">
+                <div class="form-col">
+                    <h3>Состав ланча</h3>
+                    <div class="form-group">
+                        <label for="soup">Выберите суп *</label>
+                        <select id="soup" name="soup" required>
+                            <option value="" disabled selected>— Выберите суп —</option>
+                            <option value="pumpkin_soup">Сливочный суп с тыквой</option>
+                            <option value="mushroom_soup">Крем-суп из белых грибов</option>
+                            <option value="solyanka">Солянка мясная сборная</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="main_dish">Выберите главное блюдо *</label>
+                        <select id="main_dish" name="main_dish" required>
+                            <option value="" disabled selected>— Выберите блюдо —</option>
+                            <option value="chicken_quinoa">Куриная грудка с киноа</option>
+                            <option value="pasta_bolo">Паста Болоньезе</option>
+                            <option value="salmon_rice">Рис с лососем на пару</option>
+                            <option value="meatballs">Тефтели в томатном соусе</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="drink">Выберите напиток *</label>
+                        <select id="drink" name="drink" required>
+                            <option value="" disabled selected>— Выберите напиток —</option>
+                            <option value="cranberry_mors">Клюквенный морс</option>
+                            <option value="lemonade">Домашний лимонад</option>
+                            <option value="compote">Компот из сухофруктов</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="comment">Комментарий к заказу</label>
+                        <textarea id="comment" name="comment" placeholder="Особые пожелания, аллергии, дополнительная информация..."></textarea>
+                    </div>
+                </div>
+
+                <div class="form-col">
+                    <h3>Контактные данные</h3>
+                    <div class="form-group">
+                        <label for="name">Имя *</label>
+                        <input type="text" id="name" name="name" required placeholder="Иван Иванов">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email" required placeholder="ivan@example.com">
+                    </div>
+                    <div class="form-group checkbox-group">
+                        <input type="checkbox" id="newsletter" name="newsletter" value="yes" checked>
+                        <label for="newsletter">Хочу получать новости и акции на почту</label>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Телефон *</label>
+                        <input type="tel" id="phone" name="phone" required placeholder="+7 (999) 123-45-67">
+                    </div>
+                    <div class="form-group">
+                        <label for="address">Адрес доставки *</label>
+                        <input type="text" id="address" name="address" required placeholder="Москва, ул. Примерная, д.1">
+                    </div>
+                    <div class="form-group">
+                        <label>Время доставки *</label>
+                        <div class="radio-option">
+                            <label>
+                                <input type="radio" name="delivery_time_option" value="asap" checked> Как можно скорее
+                            </label>
+                            <label>
+                                <input type="radio" name="delivery_time_option" value="exact"> В определенное время
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group time-field" id="timeFieldGroup">
+                        <label for="delivery_time">Укажите время доставки</label>
+                        <input type="time" id="delivery_time" name="delivery_time" min="07:00" max="23:00" step="300" disabled>
+                        <small>Минимальное 07:00, максимальное 23:00, шаг 5 минут</small>
+                    </div>
+                </div>
+            </div>
+            <div class="buttons-row">
+                <button type="reset" class="btn btn-reset">Сбросить</button>
+                <button type="submit" class="btn btn-submit">Отправить заказ</button>
+            </div>
+        </form>
+    </div>
 </main>
 
 <footer id="footer-contacts">
@@ -121,6 +208,6 @@
     </div>
     <div class="copyright">2026 ЛанчБокс. Все права защищены.</div>
 </footer>
-
+<script src="js/order_script.js"></script>
 </body>
 </html>
