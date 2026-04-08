@@ -24,131 +24,21 @@
 </header>
 
 <main>
-    <section class="menu-section">
-        <h2>Супы</h2>
-        <div class="dishes-grid">
-            <div class="dish-card">
-                <img src="static/img/cream-soup-pumpkin.webp" alt="Тыквенный суп">
-                <p class="dish-price">210 ₽</p>
-                <p class="dish-title">Сливочный суп с тыквой</p>
-                <p class="dish-weight">280 г / имбирь, семечки</p>
-                <button>Добавить</button>
-            </div>
-            <div class="dish-card">
-                <img src="static/img/cream-soup-mushrooms.webp" alt="Грибной крем-суп">
-                <p class="dish-price">230 ₽</p>
-                <p class="dish-title">Крем-суп из белых грибов</p>
-                <p class="dish-weight">300 г / сливки, трюфельное масло</p>
-                <button>Добавить</button>
-            </div>
-            <div class="dish-card">
-                <img src="static/img/Солянка мясная сборная.jpg" alt="Солянка">
-                <p class="dish-price">250 ₽</p>
-                <p class="dish-title">Солянка мясная сборная</p>
-                <p class="dish-weight">350 г / лимон, оливки, сметана</p>
-                <button>Добавить</button>
-            </div>
-        </div>
-    </section>
-
-    <section class="menu-section">
-        <h2>Главные блюда</h2>
-        <div class="dishes-grid">
-            <div class="dish-card">
-                <img src="static/img/Киноа с курицекй и овощами.jpeg" alt="Курица с киноа">
-                <p class="dish-price">320 ₽</p>
-                <p class="dish-title">Куриная грудка с киноа и овощами гриль</p>
-                <p class="dish-weight">380 г / соус песто</p>
-                <button>Добавить</button>
-            </div>
-            <div class="dish-card">
-                <img src="static/img/Паста Болоньезе с пармезаном.jpg" alt="Паста Болоньезе">
-                <p class="dish-price">340 ₽</p>
-                <p class="dish-title">Паста Болоньезе с пармезаном</p>
-                <p class="dish-weight">400 г / говяжий фарш, томаты</p>
-                <button>Добавить</button>
-            </div>
-            <div class="dish-card">
-                <img src="static/img/Рис с лососем на пару.webp" alt="Рис с лососем">
-                <p class="dish-price">450 ₽</p>
-                <p class="dish-title">Рис с лососем на пару</p>
-                <p class="dish-weight">360 г / брокколи, терияки</p>
-                <button>Добавить</button>
-            </div>
-            <div class="dish-card">
-                <img src="static/img/Тефтели в томатном соусе с пюре.jpg" alt="Тефтели с пюре">
-                <p class="dish-price">310 ₽</p>
-                <p class="dish-title">Тефтели в томатном соусе с пюре</p>
-                <p class="dish-weight">420 г / телятина, картофель</p>
-                <button>Добавить</button>
-            </div>
-        </div>
-    </section>
-
-    <section class="menu-section">
-        <h2>Напитки</h2>
-        <div class="dishes-grid">
-            <div class="dish-card">
-                <img src="static/img/Клюквенный морс.jpeg" alt="Морс клюквенный">
-                <p class="dish-price">120 ₽</p>
-                <p class="dish-title">Клюквенный морс</p>
-                <p class="dish-weight">300 мл / свежая клюква</p>
-                <button>Добавить</button>
-            </div>
-            <div class="dish-card">
-                <img src="static/img/Домашний лимонад.jpg" alt="Лимонад">
-                <p class="dish-price">140 ₽</p>
-                <p class="dish-title">Домашний лимонад</p>
-                <p class="dish-weight">350 мл / мята, имбирь, лайм</p>
-                <button>Добавить</button>
-            </div>
-            <div class="dish-card">
-                <img src="static/img/Компот из сухофруктов.jpg" alt="Компот">
-                <p class="dish-price">90 ₽</p>
-                <p class="dish-title">Компот из сухофруктов</p>
-                <p class="dish-weight">250 мл / яблоко, курага</p>
-                <button>Добавить</button>
-            </div>
-        </div>
-    </section>
+    <div id="dishes-container"></div>
 
      <div class="order-form-container">
         <h2>Оформить заказ</h2>
         <form id="orderForm" action="https://httpbin.org/post" method="POST">
             <div class="form-grid">
-                <div class="form-col">
-                    <h3>Состав ланча</h3>
-                    <div class="form-group">
-                        <label for="soup">Выберите суп *</label>
-                        <select id="soup" name="soup" required>
-                            <option value="" disabled selected>— Выберите суп —</option>
-                            <option value="pumpkin_soup">Сливочный суп с тыквой</option>
-                            <option value="mushroom_soup">Крем-суп из белых грибов</option>
-                            <option value="solyanka">Солянка мясная сборная</option>
-                        </select>
+                <div class="form-col" id="selected-order-col">
+                    <h3>Ваш заказ</h3>
+                    <div id="selected-items-container">
                     </div>
-                    <div class="form-group">
-                        <label for="main_dish">Выберите главное блюдо *</label>
-                        <select id="main_dish" name="main_dish" required>
-                            <option value="" disabled selected>— Выберите блюдо —</option>
-                            <option value="chicken_quinoa">Куриная грудка с киноа</option>
-                            <option value="pasta_bolo">Паста Болоньезе</option>
-                            <option value="salmon_rice">Рис с лососем на пару</option>
-                            <option value="meatballs">Тефтели в томатном соусе</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="drink">Выберите напиток *</label>
-                        <select id="drink" name="drink" required>
-                            <option value="" disabled selected>— Выберите напиток —</option>
-                            <option value="cranberry_mors">Клюквенный морс</option>
-                            <option value="lemonade">Домашний лимонад</option>
-                            <option value="compote">Компот из сухофруктов</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="comment">Комментарий к заказу</label>
-                        <textarea id="comment" name="comment" placeholder="Особые пожелания, аллергии, дополнительная информация..."></textarea>
+                    <div id="total-price-container" style="display: none;">
+                        <div class="total-price-block">
+                            <span>Итого:</span>
+                            <span id="total-price">0</span> ₽
+                        </div>
                     </div>
                 </div>
 
@@ -190,12 +80,20 @@
                         <input type="time" id="delivery_time" name="delivery_time" min="07:00" max="23:00" step="300" disabled>
                         <small>Минимальное 07:00, максимальное 23:00, шаг 5 минут</small>
                     </div>
+                    <div class="form-group">
+                        <label for="comment">Комментарий к заказу</label>
+                        <textarea id="comment" name="comment" placeholder="Особые пожелания, аллергии..."></textarea>
+                    </div>
+                    <div class="buttons-row">
+                        <button type="reset" class="btn btn-reset">Сбросить форму</button>
+                        <button type="submit" class="btn btn-submit">Отправить заказ</button>
+                    </div>
                 </div>
             </div>
-            <div class="buttons-row">
-                <button type="reset" class="btn btn-reset">Сбросить</button>
-                <button type="submit" class="btn btn-submit">Отправить заказ</button>
-            </div>
+            <!-- Скрытые поля чтобы передать данные в форме через POST -->
+            <input type="hidden" id="selected_soup" name="selected_soup" value="">
+            <input type="hidden" id="selected_main" name="selected_main" value="">
+            <input type="hidden" id="selected_drink" name="selected_drink" value="">
         </form>
     </div>
 </main>
@@ -208,6 +106,8 @@
     </div>
     <div class="copyright">2026 ЛанчБокс. Все права защищены.</div>
 </footer>
-<script src="js/order_script.js"></script>
+<script src="js/dishes.js"></script>
+<script src="js/order.js"></script>
+
 </body>
 </html>
