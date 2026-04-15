@@ -1,0 +1,31 @@
+
+.filters-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #f0e4cf;
+}
+
+.filter-btn {
+    background: #f1eee9;
+    border: none;
+    padding: 6px 18px;
+    border-radius: 30px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #5e3a1c;
+    cursor: pointer;
+}
+
+.filter-btn:hover {
+    background-color: #e0d8cb;
+}
+
+.filter-btn.active {
+    background-color: #ff6347;
+    color: white;
+    box-shadow: 0 2px 6px rgba(255, 99, 71, 0.3);
+}

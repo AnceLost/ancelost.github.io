@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Собрать ланч — ЛанчБокс</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="static/css/styles.css" rel="stylesheet">
+    <link href="static/css/build-lanch-styles.css" rel="stylesheet">
+    <link href="static/css/build-lanch-filters-styles.css" rel="stylesheet">
+</head>
+<body>
+
+<header>
+    <h1 class="mainheader">Собери свой ланч</h1>
+    <nav>
+        <a href="index.html">Главная</a>
+        <a href="#">Меню</a>
+        <a href="#" class="active">Собрать обед</a>
+        <a href="#footer-contacts">Контакты</a>
+        <a href="#">Акции</a>
+    </nav>
+</header>
+
+<main>
+    <div id="dishes-container"></div>
+
+     <div class="order-form-container">
+        <h2>Оформить заказ</h2>
+        <form id="orderForm" action="https://httpbin.org/post" method="POST">
+            <div class="form-grid">
+                <div class="form-col" id="selected-order-col">
+                    <h3>Ваш заказ</h3>
+                    <div id="selected-items-container">
+                    </div>
+                    <div id="total-price-container" style="display: none;">
+                        <div class="total-price-block">
+                            <span>Итого:</span>
+                            <span id="total-price">0</span> ₽
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-col">
+                    <h3>Контактные данные</h3>
+                    <div class="form-group">
+                        <label for="name">Имя *</label>
+                        <input type="text" id="name" name="name" required placeholder="Иван Иванов">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email" required placeholder="ivan@example.com">
+                    </div>
+                    <div class="form-group checkbox-group">
+                        <input type="checkbox" id="newsletter" name="newsletter" value="yes" checked>
+                        <label for="newsletter">Хочу получать новости и акции на почту</label>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Телефон *</label>
+                        <input type="tel" id="phone" name="phone" required placeholder="+7 (999) 123-45-67">
+                    </div>
+                    <div class="form-group">
+                        <label for="address">Адрес доставки *</label>
+                        <input type="text" id="address" name="address" required placeholder="Москва, ул. Примерная, д.1">
+                    </div>
+                    <div class="form-group">
+                        <label>Время доставки *</label>
+                        <div class="radio-option">
+                            <label>
+                                <input type="radio" name="delivery_time_option" value="asap" checked> Как можно скорее
+                            </label>
+                            <label>
+                                <input type="radio" name="delivery_time_option" value="exact"> В определенное время
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group time-field" id="timeFieldGroup">
+                        <label for="delivery_time">Укажите время доставки</label>
+                        <input type="time" id="delivery_time" name="delivery_time" min="07:00" max="23:00" step="300" disabled>
+                        <small>Минимальное 07:00, максимальное 23:00, шаг 5 минут</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="comment">Комментарий к заказу</label>
+                        <textarea id="comment" name="comment" placeholder="Особые пожелания, аллергии..."></textarea>
+                    </div>
+                    <div class="buttons-row">
+                        <button type="reset" class="btn btn-reset">Сбросить форму</button>
+                        <button type="submit" class="btn btn-submit">Отправить заказ</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Скрытые поля чтобы передать данные в форме через POST -->
+            <input type="hidden" id="selected_soup" name="selected_soup" value="">
+            <input type="hidden" id="selected_main" name="selected_main" value="">
+            <input type="hidden" id="selected_drink" name="selected_drink" value="">
+        </form>
+    </div>
+</main>
+
+<footer id="footer-contacts">
+    <div class="footer-contacts">
+        <p><strong>ЛанчБокс — доставка бизнес-ланчей в Москве</strong></p>
+        <p><a href="tel:+74951234567">+7 (495) 123-45-67</a> | <a href="mailto:order@lunchbox.msk.ru">order@lunchbox.msk.ru</a></p>
+        <p>Москва ...</p>
+    </div>
+    <div class="copyright">2026 ЛанчБокс. Все права защищены.</div>
+</footer>
+<script src="js/dishes.js"></script>
+<script src="js/order.js"></script>
+
+</body>
+</html>
