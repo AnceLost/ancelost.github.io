@@ -10,6 +10,7 @@
     <link href="static/css/styles.css" rel="stylesheet">
     <link href="static/css/build-lanch-styles.css" rel="stylesheet">
     <link href="static/css/build-lanch-filters-styles.css" rel="stylesheet">
+    <link href="static/css/build-lanch-combo.css" rel="stylesheet">
 </head>
 <body>
 
@@ -26,6 +27,12 @@
 
 <main>
     <div id="dishes-container"></div>
+
+    <section class="combo-section">
+        <h2>Доступные варианты ланча</h2>
+        <div class="combo-grid" id="combo-grid"></div>
+        <p class="dessert-info">Десерты можно добавить к любому из этих вариантов</p>
+    </section>
 
      <div class="order-form-container">
         <h2>Оформить заказ</h2>
@@ -94,7 +101,10 @@
             <!-- Скрытые поля чтобы передать данные в форме через POST -->
             <input type="hidden" id="selected_soup" name="selected_soup" value="">
             <input type="hidden" id="selected_main" name="selected_main" value="">
+            <input type="hidden" id="selected_salad" name="selected_salad" value="">
             <input type="hidden" id="selected_drink" name="selected_drink" value="">
+            <input type="hidden" id="selected_dessert" name="selected_dessert" value="">
+
         </form>
     </div>
 </main>
@@ -107,6 +117,7 @@
     </div>
     <div class="copyright">2026 ЛанчБокс. Все права защищены.</div>
 </footer>
+<script src="js/combo.js"></script>
 <script src="js/dishes.js"></script>
 <script src="js/order.js"></script>
 

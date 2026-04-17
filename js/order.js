@@ -235,8 +235,11 @@ function setupFormSubmit() {
     form.addEventListener('submit', (e) => {
         e.preventDefault();
 
-        if (!selected.soup || !selected.main || !selected.salad || !selected.drink || !selected.dessert) {
-            alert('Пожалуйста, выберите блюда из каждой категории: суп, главное блюдо, салат/стартер, напиток, десерт.');
+        //проверка комбо-набора (функции в combo.js)
+        if (!isLunchValid(selected)) {
+            const notifType = getNotificationType(selected);
+            const msg = getNotificationText(notifType);
+            showNotification(msg);
             return;
         }
 
