@@ -127,3 +127,9 @@ footer a {
     }
 }
 
+.loading {
+    text-align: center;
+    font-size: 1.5rem;
+    padding: 2rem;
+    color: #bc6c25;
+}

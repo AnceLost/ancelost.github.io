@@ -319,7 +319,17 @@ function setupResetButton() {
 }
 
 // Инициализация при загрузке страницы
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
+    // Показать индикатор загрузки
+    const container = document.getElementById('dishes-container');
+    if (container) {
+        container.innerHTML = '<div class="loading"> Загрузка меню...</div>';
+    }
+    // Загружаем блюда
+    const loadedDishes = await loadDishes();
+    dishes = loadedDishes;
+    // Очищаем контейнер и запускаем отрисовку
+    if (container) container.innerHTML = '';
     renderDishes();
     updateSelectedOrder();
     setupFormSubmit();
