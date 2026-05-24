@@ -2,20 +2,6 @@ const API_KEY = '3599dc4f-ae6e-4679-84fa-735893457d6f';
 let orders = [];
 let allDishes = [];
 
-// Загрузка всех блюд
-async function loadAllDishes() {
-    if (allDishes.length) return allDishes;
-    try {
-        const resp = await fetch('https://edu.std-900.ist.mospolytech.ru/labs/api/dishes');
-        if (!resp.ok) throw new Error();
-        allDishes = await resp.json();
-        return allDishes;
-    } catch {
-        showToast('Не удалось загрузить меню', 'error');
-        return [];
-    }
-}
-
 // Загрузка заказов пользователя
 async function loadOrders() {
     try {
@@ -126,7 +112,7 @@ function hideModal() {
 async function showDetails(orderId) {
     const order = orders.find(o => o.id === orderId);
     if (!order) return;
-    await loadAllDishes();
+    await loadDishes();
     let itemsHtml = '';
     if (order.soup_id) itemsHtml += `<li>Суп: ${getDishName(order.soup_id)}</li>`;
     if (order.main_course_id) itemsHtml += `<li>Главное: ${getDishName(order.main_course_id)}</li>`;
@@ -156,7 +142,7 @@ async function showDetails(orderId) {
 async function showEditForm(orderId) {
     const order = orders.find(o => o.id === orderId);
     if (!order) return;
-    await loadAllDishes();
+    await loadDishes();
     const html = `
         <h3>Редактирование заказа #${order.id}</h3>
         <form id="edit-order-form">
@@ -262,7 +248,7 @@ function showToast(msg, type = 'info') {
 
 // Инициализация
 document.addEventListener('DOMContentLoaded', async () => {
-    await loadAllDishes();
+    await loadDishes();
     await loadOrders();
     await renderOrders();
 });
