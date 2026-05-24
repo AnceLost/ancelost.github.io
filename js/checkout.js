@@ -1,5 +1,5 @@
 // checkout.js
-const API_KEY = '3599dc4f-ae6e-4679-84fa-735893457d6f';
+const API_KEY = 'ad022de8-6304-41f5-ba38-71161ad583b2';
 
 document.addEventListener('DOMContentLoaded', async () => {
     // Загружаем блюда, если они ещё не загружены

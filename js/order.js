@@ -1,5 +1,4 @@
 // Глобальные переменные
-let dishes = [];          // все блюда с сервера
 let selected = {         // выбранные блюда по категориям (храним объекты блюд)
     soup: null,
     main: null,
@@ -8,21 +7,6 @@ let selected = {         // выбранные блюда по категори�
     dessert: null
 };
 let activeFilters = {};   // для фильтрации
-
-// Загрузка блюд с API
-async function loadDishes() {
-    const apiUrl = 'https://edu.std-900.ist.mospolytech.ru/labs/api/dishes';
-    try {
-        const response = await fetch(apiUrl);
-        if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
-        const data = await response.json();
-        return data;
-    } catch (error) {
-        console.error('Ошибка загрузки блюд:', error);
-        showNotification('Не удалось загрузить меню. Попробуйте позже.');
-        return [];
-    }
-}
 
 // Сохранение выбранных ID в localStorage
 function saveSelectedToStorage() {

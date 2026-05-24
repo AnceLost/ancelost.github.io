@@ -1,7 +1,7 @@
 // Инициализация
 document.addEventListener('DOMContentLoaded', async () => {
     // Загружаем блюда
-    dishes = await loadDishes();
+    await loadDishes();
     if (!dishes.length) return;
 
     await restoreSelectedFromStorage();

@@ -1,6 +1,5 @@
-const API_KEY = '3599dc4f-ae6e-4679-84fa-735893457d6f';
+const API_KEY = 'ad022de8-6304-41f5-ba38-71161ad583b2';
 let orders = [];
-let allDishes = [];
 
 // Загрузка заказов пользователя
 async function loadOrders() {
@@ -21,7 +20,7 @@ async function loadOrders() {
 // Получение названия блюда по ID
 function getDishName(id) {
     if (!id) return null;
-    const dish = allDishes.find(d => d.id === id);
+    const dish = dishes.find(d => d.id === id);
     return dish ? dish.name : `Блюдо #${id}`;
 }
 
@@ -41,7 +40,7 @@ function calculatePrice(order) {
     let total = 0;
     const ids = [order.soup_id, order.main_course_id, order.salad_id, order.drink_id, order.dessert_id];
     ids.forEach(id => {
-        const dish = allDishes.find(d => d.id === id);
+        const dish = dishes.find(d => d.id === id);
         if (dish) total += dish.price;
     });
     return total;
