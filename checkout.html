@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Оформить заказ — ЛанчБокс</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="static/css/styles.css" rel="stylesheet">
+    <link href="static/css/build-lanch-styles.css" rel="stylesheet">
+    <link href="static/css/build-lanch-filters-styles.css" rel="stylesheet">
+    <link href="static/css/build-lanch-combo.css" rel="stylesheet">
+    <link href="static/css/sticky-panel.css" rel="stylesheet">
+</head>
+<body>
+<header>
+    <h1>Оформление заказа</h1>
+    <nav>
+        <a href="index.html">Главная</a>
+        <a href="build-lanch.html">Собрать ланч</a>
+        <a href="checkout.html" class="active">Оформить заказ</a>
+        <a href="orders.html">Заказы</a>
+        <a href="#footer-contacts">Контакты</a>
+    </nav>
+</header>
+<main>
+    <div class="checkout-grid">
+        <!-- Левая колонка - cостав заказа -->
+        <div class="checkout-col">
+            <h2>Состав заказа</h2>
+            <div id="selected-items-list" class="selected-items-list"></div>
+        </div>
+        <!-- Правая колонка - aорма оформления -->
+        <div class="checkout-col">
+            <h2>Оформление заказа</h2>
+            <form id="checkoutForm">
+                <div class="form-group">
+                    <label for="full_name">Полное имя *</label>
+                    <input type="text" id="full_name" name="full_name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group checkbox-group">
+                    <input type="checkbox" id="subscribe" name="subscribe" value="1" checked>
+                    <label for="subscribe">Хочу получать новости</label>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Телефон *</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="delivery_address">Адрес доставки *</label>
+                    <input type="text" id="delivery_address" name="delivery_address" required>
+                </div>
+                <div class="form-group">
+                    <label>Время доставки</label>
+                    <div class="radio-option">
+                        <label><input type="radio" name="delivery_type" value="now" checked> Как можно скорее</label>
+                        <label><input type="radio" name="delivery_type" value="by_time"> В определенное время</label>
+                    </div>
+                </div>
+                <div class="form-group time-field" id="time-group">
+                    <label for="delivery_time">Укажите время</label>
+                    <input type="time" id="delivery_time" name="delivery_time" min="07:00" max="23:00" step="300" disabled>
+                </div>
+                <div class="form-group">
+                    <label for="comment">Комментарий</label>
+                    <textarea id="comment" name="comment"></textarea>
+                </div>
+                <div class="buttons-row">
+                    <button type="submit" class="btn btn-submit" id="submit-order">Отправить заказ</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</main>
+<footer id="footer-contacts">
+    <div class="footer-contacts">
+        <p>📞 <a href="tel:+74951234567">+7 (495) 123-45-67</a> | ✉️ <a href="mailto:order@lunchbox.msk.ru">order@lunchbox.msk.ru</a></p>
+        <p>📍 Москва</p>
+    </div>
+    <div class="copyright">© 2025 ЛанчБокс</div>
+</footer>
+<script src="js/order.js"></script>
+<script src="js/checkout.js"></script>
+</body>
+</html>

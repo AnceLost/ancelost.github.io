@@ -1,0 +1,84 @@
+/* Sticky панель */
+.sticky-panel {
+    position: sticky;
+    bottom: 20px;
+    z-index: 100;
+    background: white;
+    border-radius: 60px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    padding: 12px 24px;
+    margin: 0 2rem 1rem;
+    backdrop-filter: blur(8px);
+    background: rgba(255,255,255,0.95);
+}
+.panel-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+.checkout-btn {
+    background-color: #ff6347;
+    color: white;
+    padding: 8px 24px;
+    border-radius: 40px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.2s;
+}
+.checkout-btn:hover {
+    background-color: #e5533a;
+}
+.checkout-btn.disabled {
+    background-color: #ccc;
+    pointer-events: none;
+    opacity: 0.6;
+}
+/* Выделение выбранной карточки */
+.dish-card.selected {
+    border: 2px solid #ff6347;
+    background-color: #fff5f0;
+}
+/* Страница оформления */
+.checkout-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+.checkout-col {
+    background: white;
+    border-radius: 28px;
+    padding: 1.5rem;
+    box-shadow: 0 12px 20px rgba(0,0,0,0.05);
+}
+.selected-items-list .selected-category {
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 0.5rem;
+}
+.selected-item-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.remove-item-btn {
+    background: #e74c3c;
+    color: white;
+    border: none;
+    padding: 4px 12px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+.empty-order-message {
+    text-align: center;
+    padding: 2rem;
+    color: #7f8c8d;
+}
+@media (max-width: 800px) {
+    .checkout-grid { grid-template-columns: 1fr; }
+    .sticky-panel { margin: 0 1rem 1rem; }
+}

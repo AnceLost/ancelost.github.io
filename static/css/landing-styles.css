@@ -1,0 +1,71 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    overflow-x: hidden;
+}
+.hero {
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1547573854-74d2a71d0826?w=1600&h=900&fit=crop');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 120px 0;
+}
+.hero h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+.hero .lead {
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+}
+/* Карточки преимуществ */
+.feature-icon {
+    font-size: 2.5rem;
+    color: #ff6347;
+    margin-bottom: 1rem;
+}
+.feature-card {
+    transition: transform 0.2s;
+    height: 100%;
+    border: none;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+.feature-card:hover {
+    transform: translateY(-5px);
+}
+/* CTA блок */
+.cta-section {
+    background: #ff6347;
+    color: white;
+    padding: 60px 0;
+}
+.cta-section .btn-outline-light {
+    border-width: 2px;
+}
+/* Форма обратной связи */
+.contact-form {
+    background: #fefaf5;
+    padding: 2rem;
+    border-radius: 28px;
+    box-shadow: 0 12px 28px rgba(0,0,0,0.08);
+}
+footer {
+    background-color: #1e2a2e;
+    color: #ddd;
+    padding: 2rem 0;
+}
+footer a {
+    color: #ffb347;
+    text-decoration: none;
+}
+footer a:hover {
+    color: #ff6347;
+}
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+    .hero .lead {
+        font-size: 1rem;
+    }
+}
