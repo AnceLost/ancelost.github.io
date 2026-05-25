@@ -1,7 +1,8 @@
-// dishesData.js – единое хранилище и загрузчик блюд
+
 let dishes = [];
 let dishesLoaded = false;
 let dishesLoadingPromise = null;
+const API_KEY = 'ad022de8-6304-41f5-ba38-71161ad583b2';
 
 async function loadDishes(forceReload = false) {
     if (!forceReload && dishesLoaded && dishes.length) {
@@ -11,7 +12,7 @@ async function loadDishes(forceReload = false) {
     if (dishesLoadingPromise) {
         return dishesLoadingPromise;
     }
-    const apiUrl = 'https://edu.std-900.ist.mospolytech.ru/labs/api/dishes';
+    const apiUrl = 'https://edu.std-900.ist.mospolytech.ru/labs/api/dishes?api_key=${API_KEY}';
     dishesLoadingPromise = (async () => {
         try {
             const response = await fetch(apiUrl);

@@ -293,3 +293,5 @@ const dishes = [
         image: "static/img/"
     }
 ];
+
+async function loadDishes(forceReload = false){}

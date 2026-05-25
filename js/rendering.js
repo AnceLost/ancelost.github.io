@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     highlightSelectedCards();
     updateOrderPanel();
 
-    setupFiltersAndReset();
+    //setupFiltersAndReset();
 });
 
 const categoriesConfig = {

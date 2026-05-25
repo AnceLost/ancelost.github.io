@@ -1,4 +1,3 @@
-const API_KEY = 'ad022de8-6304-41f5-ba38-71161ad583b2';
 let orders = [];
 
 // Загрузка заказов пользователя
@@ -57,7 +56,7 @@ function formatDelivery(order) {
 async function renderOrders() {
     const container = document.getElementById('orders-list');
     if (!orders.length) {
-        container.innerHTML = '<div class="empty-message">У вас пока нет заказов. Перейдите на страницу <a href="build-lunch.html">Собрать ланч</a>, чтобы сделать первый заказ.</div>';
+        container.innerHTML = '<div class="empty-message">У вас пока нет заказов. Перейдите на страницу <a href="build-lanch.html">Собрать ланч</a>, чтобы сделать первый заказ.</div>';
         return;
     }
     let html = `
